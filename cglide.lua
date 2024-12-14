@@ -45,8 +45,8 @@ end
 -- Function to start gliding
 local function startGlide()
     local humanoid = player.Character and player.Character:FindFirstChild("Humanoid")
-    
-    if not isGliding and humanoid and humanoid:GetState() == Enum.HumanoidStateType.Freefall and cooldown < 1 then
+    getUserChar()
+    if not isGliding and humanoid and humanoid:GetState() == Enum.HumanoidStateType.Freefall and cooldown < 1 and userchar == "cream" then
         isGliding = true
         
         if clonedTemplate then
