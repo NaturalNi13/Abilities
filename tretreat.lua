@@ -182,7 +182,7 @@ local function onInputBegan(input, gameProcessed)
     if gameProcessed then return end
 getUserChar()
     if (input.UserInputType == Enum.UserInputType.Gamepad1 and input.KeyCode == Enum.KeyCode.ButtonB) or 
-       (input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.Q) then
+       (input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.Q) and userchar == "eggman" then
         tRetreat()
     end
 end
