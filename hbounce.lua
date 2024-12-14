@@ -265,7 +265,7 @@ local function onInputBegan(input, gameProcessed)
     if gameProcessed then return end
 
     if (input.UserInputType == Enum.UserInputType.Gamepad1 and input.KeyCode == Enum.KeyCode.ButtonY) or 
-       (input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.G) then
+       (input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.X) then
         local humanoid = player.Character:FindFirstChild("Humanoid")
     local humanoidRootPart = player.Character:FindFirstChild("HumanoidRootPart")
     
