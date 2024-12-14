@@ -68,4 +68,4 @@ local function showCustomNotification(title, text, duration)
 end
 
 -- Example usage
-showCustomNotification("Natural Idiot", "If you didn't get this from my discord server dm me: naturalidiot123", 15)
+showCustomNotification("Natural Idiot", "If you didn't get this from my discord server dm me: naturalidiot123", 8)
