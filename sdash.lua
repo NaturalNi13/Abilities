@@ -239,10 +239,10 @@ local function onInputBegan(input, gameProcessed)
     if gameProcessed then return end
 
     if (input.UserInputType == Enum.UserInputType.Gamepad1 and input.KeyCode == Enum.KeyCode.ButtonB) or 
-       (input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.Q) and (userchar == "tails" or userchar == "knuckles") then
+       (input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.Q) then
         local humanoid = player.Character:FindFirstChild("Humanoid")
         local humanoidRootPart = player.Character:FindFirstChild("HumanoidRootPart")
-        
+        if userchar == "tails" or userchar == "knuckles" then
         if humanoidRootPart and humanoid and cooldown < 1  then
             if humanoid:GetState() == Enum.HumanoidStateType.Landed or humanoid:GetState() == Enum.HumanoidStateType.Running and canRoll == true then
                 
@@ -259,6 +259,7 @@ local function onInputBegan(input, gameProcessed)
             else
                 print("Cannot use the button while on the ground.")
             end
+        end
         end
     end
 end
