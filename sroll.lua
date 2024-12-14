@@ -213,11 +213,11 @@ local function onInputBegan(input, gameProcessed)
     if gameProcessed then return end
 
     if (input.UserInputType == Enum.UserInputType.Gamepad1 and input.KeyCode == Enum.KeyCode.ButtonY) or 
-       (input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.X) and (userchar == "sally" or userchar == "shadow") then
+       (input.UserInputType == Enum.UserInputType.Keyboard and input.KeyCode == Enum.KeyCode.X) then
         local humanoid = player.Character:FindFirstChild("Humanoid")
         local humanoidRootPart = player.Character:FindFirstChild("HumanoidRootPart")
-        
-        if humanoidRootPart and humanoid and cooldown < 1 then
+        if userchar == "sally" or userchar == "shadow" then
+            if humanoidRootPart and humanoid and cooldown < 1 then
             if humanoid:GetState() == Enum.HumanoidStateType.Landed or humanoid:GetState() == Enum.HumanoidStateType.Running and canRoll == true then
                 
                 animationTrack:Play()
@@ -228,9 +228,10 @@ local function onInputBegan(input, gameProcessed)
                 cooldown = 16
                 canRoll = true
                 clonedTemplate.cooldown.Visible = true
-        clonedTemplate.cooldown.currentCooldown.Text = cooldown
+                clonedTemplate.cooldown.currentCooldown.Text = cooldown
             else
                 print("Cannot use the button while on the ground.")
+            end
             end
         end
     end
